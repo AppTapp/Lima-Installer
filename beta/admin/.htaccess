@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "what are you doing here?"
+AuthUserFile "/home/lima/.htpasswds/public_html/beta/admin/passwd"
+require valid-user

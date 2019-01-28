@@ -1,0 +1,5 @@
+#!/bin/bash
+launchctl load /System/Library/LaunchDaemons/com.lima.service.plist
+launchctl start com.lima.service
+echo Lima 2.0.1 Beta installed, enjoy"
+echo "By using lima you agree to terms of service which can be found on limainstaller.com"

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lima is here!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+	  p.slightlybigger {font-size:13px;}
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+
+
+    <div class="container">
+
+      <center><h1>Lima beta is here!</h1><hr></center>
+
+<h4>UPDATE #3: If you registered to test Lima and haven't received an email yet, this is normal. Due to the high demand we can not invite eveyone who registered to test lima right away. We're sending out invites in batches based on a first come first serve base.</h4>    
+<br></br>
+<p>It has been exactly a year (and one day) since I <a href="http://youtu.be/eWPFfb4mF6k">demonstrated</a> a working concept of a browser based package manager for iOS.
+In the last few years we've seen a big increase in applications which run in your webbrowser, so I just had a sudden idea to make a web application which would install native software on to your device. Looking at the platforms which I could release this on I had a few options. Windows and Mac OS X weren't really waiting for a new package installer. In windows every application has its own installer and in Mac OS X it is similar. The perfect platform for a new package installer with a graphical user interface was Debian. Since most of the Linux geeks are happy with the command line to manage packages there was still one more choice left. A few years ago the Debian package management system was ported to iOS and since then most of the jailbreakers install packages onto their iOS devices using Cydia. Cydia is a beautiful piece of software used by millions of people, but there should always be room for experimental alternatives. So I decided to start developing a system to install packages from the browser on iOS. Within a week I had a working version of Lima which could preform some real basic installation tasks. Since people started doubting wether it was possible to build a browser based package installation system I decided it was time for a demo/poc video. Within days after posting it, there were 80.000 views and Lima was all over the news websites. This actually was a big surprise for me, I hadn't expected that it would be so popular. Now there wasn't much choice left, Lima had to get finished and released.
+</br>
+Now here we are, one year after I started developing Lima. What happened in that year? There was one aspect of Lima which was very important for me: Security. Actually this can be split in to two parts:
+</br>
+-Making sure that websites don't automatically install packages on your device without you approving of it.</br>
+-Making sure Packages are installed safely. Which means it should keep stuff like package dependencies and conflicts in mind.</br>
+Both of those were hard for me to realize one year ago due to insufficient programming skills. The main reason why it took so long I must admit is a lack of time and motivation. Recently after noticing Lima was almost one year old and some additional motivation from <a href="http://twitter.com/awmusic12635">awmusic12635</a> I decided it couldn't sit around much longer. It was time to finish it. 
+
+Well so first I got rid of all messy code I used in the initial version and restarted writing Lima from scratch. 
+<br></br>
+<h3>So how does this work?</h3></br>
+The real magic behind Lima is the simple lightweight plugin which runs on your device, it enables the browser to do things normal web browsers can't do.
+Not going to make this too technical, if you want to know how it exactly works a bit of reverse engineering will get you pretty far :)
+<br></br>
+<h3>Doesn't that "plugin" introduce a new security problem?</h3></br>
+Well I spent a lot of time building a solid system to make sure that there is no way those actions will be preformed unless you choose to preform them. Currently it even isn't possible for sites other then limainstaler.com to install packages on your device. If you do manage to find a way around the Lima security system, shoot an email to support@limainstaller.com and if you're right you'll receive a cookie and a honorable spot in the credits of Lima.
+</br>
+</br>
+<h3>What about dependencies, dependency chains, conflicts?</h3>
+</br>
+Lima current can handle dependencies, dependency chains and conflicts. There might be a few bugs in the system doing that as its hard to test a system like that without having enough testers. 
+</br>
+</br>
+<h3>So Lima is much better than Cydia, right?</h3>
+</br>
+To be honest, I have no answer to that question. It's up to you to decide. Lima might be faster at performing certain tasks, though during the beta period we're monitoring multiple things and the whole system isn't optimized yet so it isn't running at full speed yet.  Lima also has some interesting new features like support for OTA installations. Again, I'm not going to be arrogant and claim Lima is better than Cydia, it's all up to you to decide.
+</br>
+</br>
+<h3>The beta</h3>
+</p><p class="slightlybigger">
+Now you might be thinking: "Nice talk, but where is Lima?". Well I'm happy to announce the Lima semi-public beta brought to you by the Lima team.  This means that everyone who previously registered to beta test Lima will receive an email containing instructions on how to test Lima within 1 to 2 days. If you haven't registered for the Lima beta or you didn't receive your email you can still register to beta test Lima <a href="register.php">here</a>. A small amount of people thought they could make the Lima beta come faster by spamming the registration form during the period that I accidentally had disabled the captcha. Those people have been nominated for a (permanent) ban from Lima Installer. Lima has been tested and found to be working on iOS 4.2.1-5.0.1 it probably works on other iOS versions to but it just hasn't been tested on those. I would recommend using it on iOS5, on older iOS version annoying GUI bugs might appear.  Note that like with all betas there's a very small chance that something goes terribly wrong and you will have to restore your device, that's why I'm asking you to use this beta with caution. And remember, as long as your device still boots there (almost) never is a need to restore.
+</br>
+</br>
+</p><p>
+<h3>Coming soon...</h3></br>
+There are a couple features which aren't finished yet and will be released along the way:
+<ul>
+<li>Over the air installations (apple tv?!!)</li>
+<li>Smart package recommendations</li>
+<li>Backups</li>
+<li>Partial Cydia store integration?</li>
+<li>Improved and faster UI for older devices, iPad and desktop</li>
+<li>Your ideas!</li>
+</ul>
+</br>
+<h3>A small note to the creators of Cydia</h3></br>
+I don't exactly want to be your competitor,  please see Lima as an interesting new experiment. If Lima is causing problems for you or if you have any suggestions or questions just send us an email.
+<br></br>
+<h3>The apt repo's Lima uses</h3></br>
+The packages you install with Lima are provided by the 3 main iPhone apt repo's, BigBoss, ModMyi and Saurik. These people are doing a great job maintaining their repo's. Of course they can't keep those repo's running for free. Cydia shows their ads so they have some income to pay for servers and other things. Lima currently doesn't show any ads but if needed lima will show ads. We hope we can work out something together with the repo owners to make sure everyone stays happy.
+<br></br><h3>Developers</h3>
+</br>
+Currently there is no public Lima api.
+Though exciting things for you too are coming up. Lima doesn't have to be just an installer, we could also bring other fun actions to the browser. Like with an accelerometer on a webpage we could do some cool things, stay tuned for updates and feel free to share any suggestions on what we should add to Lima for you.
+<br></br>
+This page will be updated soon with frequently asked questions and other things I forgot to mention. At last, I've got one more thing to say, feedback, questions, suggestions or anything else on your mind (like the current weather situation) are always welcome! <h4>Just write an email over to support@limainstaller.com, If your email arrives I promise it will get read and if needed responded to.</h4>
+</br>
+-<a href="http://twitter.com/codedit">codedit</a></br>Lima Installer's lead developer.
+<hr>
+<h6>p.s. if you want to hear more interesting things go follow <a href="http://twitter.com/codedit">@codedit</a> and <a href="http://twitter.com/awmusic12635">@awmusic12635</a> on twitter!</h6>
+    </div> <!-- /container -->

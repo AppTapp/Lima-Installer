@@ -1,0 +1,57 @@
+<?php
+$udid=$_SERVER['HTTP_X_UNIQUE_ID'];
+$dl_file="fail";
+$local_file = $_GET['q'];
+if ($local_file=="Packages") {
+$local_file=$local_file.".bz2";
+header('Cache-control: private');
+header('Content-Type: application/octet-stream');
+//header('Content-Length: '.filesize($local_file));
+header('Content-Disposition: filename='.$local_file);
+} else {
+$local_file=$local_file.".deb";
+header('Cache-control: private');
+header('Content-Type: application/octet-stream');
+//header('Content-Length: '.filesize($local_file));
+header('Content-Disposition: filename='.$local_file);
+}
+include("config.php");
+mysql_connect($host, $username, $password) or die("error (1)"); 
+mysql_select_db($database) or die("error (2)"); 
+if (strlen($udid)<10) {
+//mysql_query("INSERT INTO `users` VALUES('udid short', '$file')");
+}
+$result = mysql_query("SELECT * FROM `users` WHERE `udid`='$udid'");
+$data=mysql_fetch_row($result); 
+//$data[0]="12333333333444444444445666666767";//debug to download without cydia
+if (strlen($data[0])<10) {
+//access denied 403
+//header('HTTP/1.1 403 Forbidden');
+//mysql_query("INSERT INTO `users` VALUES('denied', '$file')");
+//echo "access denied";
+} else {
+$dl_file=$local_file;
+}
+if (file_exists($dl_file)) {
+   
+
+   flush();
+
+   $file = fopen($dl_file, "r");
+
+   while (!feof($file)) {
+
+       print fread($file ,filesize($dl_file));
+
+       flush();
+
+       sleep(1);
+   }
+
+   fclose($file);
+} else {
+echo "not found: ";
+echo $dl_file;
+
+}
+ ?>

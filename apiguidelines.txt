@@ -1,0 +1,17 @@
+LIMA DEVELOPER PRIVATE API ACCESS GUIDELINES
+TO USE THE LIMA API YOU MUST FOLLOW THESE GUIDLINES
+IF YOU FAIL TO FOLLOW THESE GUIDELINES YOUR API ACCESS KEY WILL BE REVOKED WITHOUT ANY PRIOR WARNING.
+
+API GUIDELINES:
+-Your application may not install packages/respring/reboot/obtain device information without the consent of the user
+-Your application may not have the same functionality as lima
+-Your application may not re-use exclusive Lima UI elements
+-Before launching your application, it must be approved by a verified Lima staff member to make sure it meets all the security requirements.
+-Your application may not install pirated, cracked or any other illegal packages.
+
+
+tips for securing your application:
+-filter all inputs
+-it should not be possible to directly link to a page initiating an install
+-....
+to be continued....

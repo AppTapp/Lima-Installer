@@ -1,0 +1,12 @@
+#import <Foundation/Foundation.h>
+
+@interface device : NSObject {
+   // NSString* uuid;
+  //  NSString* udid;
+}
+- (id) GetUdid: (NSString*)input;
+- (id) GetUuid;
+//- (NSString*) uuid;
+
+//- (void) GetUdid;
+@end

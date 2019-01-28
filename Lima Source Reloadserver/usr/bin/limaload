@@ -1,0 +1,22 @@
+wget http://apt.thebigboss.org/repofiles/cydia/dists/stable/main/binary-iphoneos-arm/Packages.bz2
+bunzip2 Packages.bz2
+sed -i 's/iphoneos-arm/all/g' Packages
+sed -i 's/, /, limacache/g' Packages
+sed -i 's/, limacache /, /g' Packages
+sed -i 's/Package: /Package: limacache/g' Packages
+sed -i 's/Depends: /Depends: limacache/g' Packages
+rm Packages.bz2
+bzip2 Packages
+mv ./Packages.bz2 /var/www/LIMAZ/bigboss/Packages.bz2
+
+wget http://apt.saurik.com/cydia-3.7/Packages.bz2
+bunzip2 Packages.bz2
+sed -i 's/iphoneos-arm/all/g' Packages
+sed -i 's/, /, limacache/g' Packages
+sed -i 's/Package: /Package: limacache/g' Packages
+sed -i 's/Depends: /Depends: limacache/g' Packages
+rm Packages.bz2
+bzip2 Packages
+mv ./Packages.bz2 /var/www/LIMAZ/saurik/Packages.bz2
+
+apt-get update

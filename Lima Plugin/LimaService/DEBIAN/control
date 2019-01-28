@@ -1,0 +1,11 @@
+Package: com.lima.service
+Name: Lima Service Beta
+Version: 2.0
+Architecture: iphoneos-arm
+Description: BETA version of Lima Service
+Homepage: http://www.beta.limainstaller.com
+Maintainer: codedit <support@limainstaller.com>
+Depends: socat,curl,cydia
+Author: codedit <support@limainstaller.com>
+Sponsor: Fliphost <http://www.fliphost.net/>
+Section: Installers

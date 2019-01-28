@@ -1,0 +1,72 @@
+limacachesbsettings
+  Depends: libactivator (>= 1.3.2)
+  Depends: limacachefirmware (<< 4.0)
+  Depends: limacachelibhide (>= 2.0.6-4)
+  Depends: limacachemobilesubstrate
+  Depends: limacachesbsettingstoggles (>= 3.0.5)
+  Depends: limacacheshell-cmds
+libactivator
+limacachefirmware
+limacachelibhide
+  Depends: limacachemobilesubstrate
+limacachemobilesubstrate
+  Depends: limacachecom.saurik.substrate.safemode
+limacachecom.saurik.substrate.safemode
+  Depends: limacachemobilesubstrate (>= 0.9.3367+38)
+limacachesbsettingstoggles
+  Depends: limacachecom.modmyi.serioussbsettingshd
+  Depends: limacachecom.sbsdefaulthdtheme
+  Depends: limacachefirmware (>= 3.2)
+  Depends: limacacheorg.thebigboss.sbsairplanetoggle
+  Depends: sbsettingsdata2
+limacachecom.modmyi.serioussbsettingshd
+  Depends: limacachefirmware (>= 4.0)
+  Depends: limacachesbsettings (>= 1.0)
+limacachecom.sbsdefaulthdtheme
+  Depends: limacachesbsettings
+limacacheorg.thebigboss.sbsairplanetoggle
+  Depends: limacachemobilesubstrate
+  Depends: limacachesbsettings (>= 3.1.1)
+sbsettingsdata2
+limacacheshell-cmds
+  PreDepends: limacachedpkg (>= 1.14.25-8)
+limacachedpkg
+  Depends: limacachebash
+  Depends: limacachebzip2
+  Depends: limacachecoreutils-bin
+  Depends: limacachediffutils
+  Depends: limacachefindutils
+  Depends: limacachegzip
+  Depends: limacachelzma
+  Depends: limacachencurses
+  Depends: limacachetar
+limacachebash
+  Depends: limacachegrep
+  Depends: limacachencurses
+  Depends: limacachereadline (>= 6.0-7)
+  Depends: limacachesed
+limacachegrep
+  PreDepends: limacachedpkg (>= 1.14.25-8)
+limacachencurses
+  PreDepends: limacachedpkg (>= 1.14.25-8)
+limacachereadline
+  Depends: limacachencurses
+  PreDepends: limacachedpkg (>= 1.14.25-8)
+limacachesed
+  PreDepends: limacachedpkg (>= 1.14.25-8)
+limacachebzip2
+limacachecoreutils-bin
+limacachediffutils
+limacachefindutils
+  Depends: limacachebash
+  Depends: limacachesed
+limacachegzip
+  Depends: limacachegrep
+  Depends: limacachesed
+limacachelzma
+  Depends: limacachegrep
+  Depends: limacachesed
+limacachetar
+  Depends: limacachebzip2
+  Depends: limacachegzip
+  Depends: limacachelzma
